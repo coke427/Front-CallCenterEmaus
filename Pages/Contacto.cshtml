@@ -1,0 +1,60 @@
+﻿@page
+@model prueba.Pages.ContactoModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/contacto.css">
+</head>
+
+<body>
+
+    <!-- Body -->
+    <div style="margin-bottom: 20px;">
+        <img src="img/primer-plano-hombre-piel-oscura-camiseta-azul-planta-hojas-verdes-manos-jardinero-muestra-pico-que-crecera-su-jardin-enfoque-selectivo.jpg" width="100%">
+    </div>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="contact-text">Contacta con nosotros</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form style="margin-bottom:30px">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="5"
+                                      placeholder="Escribe tu mensaje aquí"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="contact-text">Ecogreen S.A. <i class="fas fa-map-marker-alt"></i></h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15799.073924433907!2d-79.05603401284179!3d-8.125038299999982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d3476984ea1%3A0xd8e6920eb4cdf37d!2sJard%C3%ADn%20Bot%C3%A1nico%20de%20Trujillo!5e0!3m2!1ses-419!2spe!4v1683314339876!5m2!1ses-419!2spe" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="300"></iframe>
+                    </div>
+                    <br>
+                    <p href="tel:+1234567890"><i class="fas fa-phone"></i> +51 949915616 - +51 949915617</p>
+                    <p href="mailto:info@example.com"><i class="fas fa-envelope"></i> ecogreen_contacto@ecogreen.com</p>
+                    <a href="" target="_blank"><img id="redeslogos" src="img/fbc.png" alt="Facebook"></a>
+                    <a href="" target="_blank"><img id="redeslogos" src="img/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

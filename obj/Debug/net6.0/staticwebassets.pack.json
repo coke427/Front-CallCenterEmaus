@@ -9,8 +9,8 @@
       "PackagePath": "staticwebassets\\config.js"
     },
     {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\contribuyente.css",
-      "PackagePath": "staticwebassets\\css\\contribuyente.css"
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\contacto.css",
+      "PackagePath": "staticwebassets\\css\\contacto.css"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\index.css",
@@ -21,8 +21,8 @@
       "PackagePath": "staticwebassets\\css\\layout.css"
     },
     {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\plancontable.css",
-      "PackagePath": "staticwebassets\\css\\plancontable.css"
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\nosotros.css",
+      "PackagePath": "staticwebassets\\css\\nosotros.css"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\favicon.ico",
@@ -115,18 +115,6 @@
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\servicio-al-cliente.png",
       "PackagePath": "staticwebassets\\img\\servicio-al-cliente.png"
-    },
-    {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\Main.js",
-      "PackagePath": "staticwebassets\\js\\Main.js"
-    },
-    {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\contribuyente.js",
-      "PackagePath": "staticwebassets\\js\\contribuyente.js"
-    },
-    {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\plan_contable.js",
-      "PackagePath": "staticwebassets\\js\\plan_contable.js"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -355,14 +343,6 @@
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
-    },
-    {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\login\\css\\login.css",
-      "PackagePath": "staticwebassets\\login\\css\\login.css"
-    },
-    {
-      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\login\\js\\login.js",
-      "PackagePath": "staticwebassets\\login\\js\\login.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.prueba.props",

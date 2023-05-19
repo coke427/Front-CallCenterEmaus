@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O/k0iddTUAMAcOgQHlO6qpHQzV1nnYeO2tflqQeO6Qk=",
+  "Hash": "hB/TktBShMkzRsUadma5EsadEW3d7AkoJ44UhJiqjig=",
   "Source": "prueba",
   "BasePath": "_content/prueba",
   "Mode": "Default",
@@ -68,12 +68,12 @@
       "OriginalItemSpec": "wwwroot\\config.js"
     },
     {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\contribuyente.css",
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\contacto.css",
       "SourceId": "prueba",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
       "BasePath": "_content/prueba",
-      "RelativePath": "css/contribuyente.css",
+      "RelativePath": "css/contacto.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,7 +82,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\contribuyente.css"
+      "OriginalItemSpec": "wwwroot\\css\\contacto.css"
     },
     {
       "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\index.css",
@@ -119,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\css\\layout.css"
     },
     {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\plancontable.css",
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\nosotros.css",
       "SourceId": "prueba",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
       "BasePath": "_content/prueba",
-      "RelativePath": "css/plancontable.css",
+      "RelativePath": "css/nosotros.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\plancontable.css"
+      "OriginalItemSpec": "wwwroot\\css\\nosotros.css"
     },
     {
       "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\favicon.ico",
@@ -525,57 +525,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\servicio-al-cliente.png"
-    },
-    {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\contribuyente.js",
-      "SourceId": "prueba",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
-      "BasePath": "_content/prueba",
-      "RelativePath": "js/contribuyente.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\contribuyente.js"
-    },
-    {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\Main.js",
-      "SourceId": "prueba",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
-      "BasePath": "_content/prueba",
-      "RelativePath": "js/Main.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Main.js"
-    },
-    {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\plan_contable.js",
-      "SourceId": "prueba",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
-      "BasePath": "_content/prueba",
-      "RelativePath": "js/plan_contable.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\plan_contable.js"
     },
     {
       "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
@@ -1545,40 +1494,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\login\\css\\login.css",
-      "SourceId": "prueba",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
-      "BasePath": "_content/prueba",
-      "RelativePath": "login/css/login.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\login\\css\\login.css"
-    },
-    {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\login\\js\\login.js",
-      "SourceId": "prueba",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
-      "BasePath": "_content/prueba",
-      "RelativePath": "login/js/login.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\login\\js\\login.js"
     }
   ]
 }

@@ -16,12 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Contacto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Nosotros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm9zb3Ryb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Privacy.cshtml]
