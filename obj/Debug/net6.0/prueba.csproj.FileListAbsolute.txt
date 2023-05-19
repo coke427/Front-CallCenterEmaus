@@ -1,0 +1,66 @@
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\appsettings.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\package-lock.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\package.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\prueba.staticwebassets.runtime.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\prueba.exe
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\prueba.deps.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\prueba.runtimeconfig.json
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\prueba.dll
+C:\Users\cokem\OneDrive\Documentos\prueba\bin\Debug\net6.0\prueba.pdb
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.csproj.AssemblyReference.cache
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.AssemblyInfoInputs.cache
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.AssemblyInfo.cs
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.csproj.CoreCompileInputs.cache
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.RazorAssemblyInfo.cache
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.RazorAssemblyInfo.cs
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets\msbuild.prueba.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets\msbuild.build.prueba.props
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.prueba.props
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.prueba.props
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\scopedcss\bundle\prueba.styles.css
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\scopedcss\projectbundle\prueba.bundle.scp.css
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.dll
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\refint\prueba.dll
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.pdb
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\prueba.genruntimeconfig.cache
+C:\Users\cokem\OneDrive\Documentos\prueba\obj\Debug\net6.0\ref\prueba.dll
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\appsettings.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\package-lock.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\package.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\prueba.staticwebassets.runtime.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\prueba.exe
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\prueba.deps.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\prueba.runtimeconfig.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\prueba.dll
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\bin\Debug\net6.0\prueba.pdb
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.csproj.AssemblyReference.cache
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.AssemblyInfoInputs.cache
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.AssemblyInfo.cs
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.csproj.CoreCompileInputs.cache
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.RazorAssemblyInfo.cache
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.RazorAssemblyInfo.cs
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets\msbuild.prueba.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets\msbuild.build.prueba.props
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.prueba.props
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.prueba.props
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\scopedcss\bundle\prueba.styles.css
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\scopedcss\projectbundle\prueba.bundle.scp.css
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.dll
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\refint\prueba.dll
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.pdb
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\prueba.genruntimeconfig.cache
+C:\Users\cokem\OneDrive\Escritorio\COMPUTACION VISUAL\Front\obj\Debug\net6.0\ref\prueba.dll
