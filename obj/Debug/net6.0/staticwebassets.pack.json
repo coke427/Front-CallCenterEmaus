@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\css\\nosotros.css"
     },
     {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\proyectos.css",
+      "PackagePath": "staticwebassets\\css\\proyectos.css"
+    },
+    {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\solicitudes.css",
       "PackagePath": "staticwebassets\\css\\solicitudes.css"
     },
@@ -69,6 +73,10 @@
       "PackagePath": "staticwebassets\\img\\descarga.jpg"
     },
     {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\dos.jpg",
+      "PackagePath": "staticwebassets\\img\\dos.jpg"
+    },
+    {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\fbc.png",
       "PackagePath": "staticwebassets\\img\\fbc.png"
     },
@@ -79,6 +87,30 @@
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\fotor_2023-4-28_10_51_52.png",
       "PackagePath": "staticwebassets\\img\\fotor_2023-4-28_10_51_52.png"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\grup1-1.png",
+      "PackagePath": "staticwebassets\\img\\grup1-1.png"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\grup1-2.png",
+      "PackagePath": "staticwebassets\\img\\grup1-2.png"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\grup1-3.png",
+      "PackagePath": "staticwebassets\\img\\grup1-3.png"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\grup2-1.jpg",
+      "PackagePath": "staticwebassets\\img\\grup2-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\grup2-2.jpg",
+      "PackagePath": "staticwebassets\\img\\grup2-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\grup2-3.jpg",
+      "PackagePath": "staticwebassets\\img\\grup2-3.jpg"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\icons8-green-energy-64.png",
@@ -127,6 +159,10 @@
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\servicio-al-cliente.png",
       "PackagePath": "staticwebassets\\img\\servicio-al-cliente.png"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\uno.jpeg",
+      "PackagePath": "staticwebassets\\img\\uno.jpeg"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\donacion.js",
