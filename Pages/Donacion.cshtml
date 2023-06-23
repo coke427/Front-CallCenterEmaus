@@ -1,0 +1,75 @@
+﻿@page
+@model prueba.Pages.DonacionModel
+@{
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGreen</title>
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/donacion.css">
+</head>
+
+<body>
+
+    <div class="container" style="margin-top:60px">
+        <div class="row justify-content-center">
+
+            <h2 class="contact-text" style="text-align:center; margin-bottom:2rem;">Dona un espacio</h2>
+
+            <div class="col-6">
+                <form>
+                    <!-- Nombres -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
+                        <input type="text" class="form-control" id="in_nombres" required autocomplete="off">
+                    </div>
+                    <!-- Apellidos -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos</span>
+                        <input type="text" class="form-control" id="in_apellidos" required autocomplete="off">
+                    </div>
+                    <!-- DNI -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">DNI</span>
+                        <input type="text" class="form-control" id="in_dni" required autocomplete="off">
+                    </div>
+                    <!-- Telefono -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Teléfono</span>
+                        <input type="text" class="form-control" id="in_telefono" required autocomplete="off">
+                    </div>
+                    <!-- Correo -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Correo</span>
+                        <input type="text" class="form-control" id="in_correo" required autocomplete="off">
+                    </div>
+                    <!-- Dirección -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Dirección</span>
+                        <input type="text" class="form-control" id="in_direccion" required autocomplete="off">
+                    </div>
+                    <!-- Dimensiones -->
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Dimensiones</span>
+                        <input type="text" class="form-control" id="in_dimension" required autocomplete="off">
+                    </div>
+
+                    <button class="btn btn-primary" onclick="guardarNewSolicitud()" type="submit">Enviar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JS Personalizado -->
+    <script src="~/config.js"></script>
+    <script src="~/js/donacion.js?v=0.0.01"></script>
+
+</body>
+</html>

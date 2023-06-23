@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Donacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9uYWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/Solicitudes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29saWNpdHVkZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cokem/OneDrive/Escritorio/COMPUTACION VISUAL/Front/Pages/_ViewImports.cshtml]

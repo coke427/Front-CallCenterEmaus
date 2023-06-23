@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\contacto.css"
     },
     {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\donacion.css",
+      "PackagePath": "staticwebassets\\css\\donacion.css"
+    },
+    {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\nosotros.css",
       "PackagePath": "staticwebassets\\css\\nosotros.css"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\solicitudes.css",
+      "PackagePath": "staticwebassets\\css\\solicitudes.css"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\favicon.ico",
@@ -115,6 +123,18 @@
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\img\\servicio-al-cliente.png",
       "PackagePath": "staticwebassets\\img\\servicio-al-cliente.png"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\donacion.js",
+      "PackagePath": "staticwebassets\\js\\donacion.js"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\layout.js",
+      "PackagePath": "staticwebassets\\js\\layout.js"
+    },
+    {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\solicitudes.js",
+      "PackagePath": "staticwebassets\\js\\solicitudes.js"
     },
     {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\bootstrap\\LICENSE",

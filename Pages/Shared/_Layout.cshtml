@@ -37,23 +37,23 @@
                     <a class="navbar-brand" href="#">
                         <img src="img/cf60ae7baf0842328e2ca01b02e43b0c.png" height="60px">
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    <button class="navbar-toggler" type="button" id="button" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                                <a class="nav-link" href="https://localhost:7046/nosotros">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Proyectos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Donación</a>
+                                <a class="nav-link" href="https://localhost:7046/donacion">Donación</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contacto.html">Contáctanos</a>
+                                <a class="nav-link" href="https://localhost:7046/contacto">Contáctanos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="registro.html">Regístrate</a>
@@ -70,9 +70,16 @@
         </main>
     </div>
 
-
-
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.navbar-toggler').click(function () {
+                $('.navbar-collapse').toggleClass('show');
+            });
+        });
+    </script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/config.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>

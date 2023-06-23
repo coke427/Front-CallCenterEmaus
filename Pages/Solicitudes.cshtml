@@ -1,0 +1,81 @@
+﻿@page
+@model prueba.Pages.Shared.SolicitudesModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGreen</title>
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/solicitudes.css">
+</head>
+
+<body>
+    <!-- Contenido -->
+    <main class="col-md-9 col-lg-10 px-md-3">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-12" style="margin-left:9%">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2 class="h2" style="font-size:1.5rem">Solicitudes</h2>
+                </div>
+                <div class="col-lg-6" style="text-align: left; margin-bottom:45px">
+                    <button type="button" id="editar_solicitud" class="btn btn-success" onClick="modalEditarSolicitud(this)">
+                        Editar
+                    </button>
+                    <button type="button" id="refresh" class="btn btn-success" onClick="window.location.reload(true)">
+                        <span class="material-symbols-outlined">
+                            sync
+                        </span>
+                    </button>
+                </div>
+                <div style="padding-bottom: 9px; font-size:15px">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-sm custom-table" id="table_solicitudes">
+                                    <thead style="color: #023E73;">
+                                        <tr>
+                                            <th>DNI</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Telefono</th>
+                                            <th>Email</th>
+                                            <th>Dimensión</th>
+                                            <th>Dirección</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_solicitudes"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    @*Modal Nuevo Contribuyente*@
+
+    
+@*    <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2023 - prueba - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+    </footer>*@
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JS Personalizado -->
+    <script src="~/config.js"></script>
+    <script src="~/js/solicitudes.js?v=0.0.01"></script>
+
+</body>
+</html>
