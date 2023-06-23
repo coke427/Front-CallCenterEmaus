@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BobgWzmtUDAyW/ttpP52J6ZD9OXu1t5gM7YydswyNiw=",
+  "Hash": "293RFaGed2UGBNOCfAng1ghNXUvLC7u+O7xLnMY+QTY=",
   "Source": "prueba",
   "BasePath": "_content/prueba",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\layout.css"
+    },
+    {
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\login.css",
+      "SourceId": "prueba",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
+      "BasePath": "_content/prueba",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\nosotros.css",

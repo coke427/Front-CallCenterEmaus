@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\layout.css"
     },
     {
+      "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\css\\nosotros.css",
       "PackagePath": "staticwebassets\\css\\nosotros.css"
     },
