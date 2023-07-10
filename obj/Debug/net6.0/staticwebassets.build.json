@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SdplEKqvPmdZrzY42p+ob/+6W2kdyABsEkU7DDoesx8=",
+  "Hash": "XXtRpzovOKVvZ2Jya/8HPwBjOggGu7rw2hvwuZucGcw=",
   "Source": "prueba",
   "BasePath": "_content/prueba",
   "Mode": "Default",
@@ -1547,6 +1547,57 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\cdn.datatables.net_1.10.25_css_jquery.dataTables.min.css",
+      "SourceId": "prueba",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
+      "BasePath": "_content/prueba",
+      "RelativePath": "lib/cdn.datatables.net_1.10.25_css_jquery.dataTables.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\cdn.datatables.net_1.10.25_css_jquery.dataTables.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\cdn.datatables.net_1.10.25_js_jquery.dataTables.min.js",
+      "SourceId": "prueba",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
+      "BasePath": "_content/prueba",
+      "RelativePath": "lib/cdn.datatables.net_1.10.25_js_jquery.dataTables.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\cdn.datatables.net_1.10.25_js_jquery.dataTables.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\code.jquery.com_jquery-3.6.0.min.js",
+      "SourceId": "prueba",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
+      "BasePath": "_content/prueba",
+      "RelativePath": "lib/code.jquery.com_jquery-3.6.0.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\code.jquery.com_jquery-3.6.0.min.js"
+    },
+    {
       "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "prueba",
       "SourceType": "Discovered",
@@ -1749,6 +1800,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\login\\js\\login.js",
+      "SourceId": "prueba",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
+      "BasePath": "_content/prueba",
+      "RelativePath": "login/js/login.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\login\\js\\login.js"
     }
   ]
 }

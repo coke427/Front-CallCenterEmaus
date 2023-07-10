@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\login\css\" />
-    <Folder Include="wwwroot\login\js\" />
   </ItemGroup>
 
 </Project>
