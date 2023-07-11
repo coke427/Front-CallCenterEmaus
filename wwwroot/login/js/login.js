@@ -1,7 +1,7 @@
 ﻿function IniciarSesion() {
     var endpoint = hostApi + "/login/listaUsuarios";
-    var email = $("#input_user_email").val();
-    var password = $("#input_user_password").val();
+    var email = $("#input_user_email").val().trim();
+    var password = $("#input_user_password").val().trim();
 
     $.ajax({
         type: "GET",
@@ -36,3 +36,12 @@
         }
     });
 }
+
+
+$(document).ready(function () {
+    $('#btn-show-password-usuario').on('mousedown', function () {
+        $('#input_user_password').attr('type', 'text');
+    }).on('mouseup mouseleave', function () {
+        $('#input_user_password').attr('type', 'password');
+    });
+});
