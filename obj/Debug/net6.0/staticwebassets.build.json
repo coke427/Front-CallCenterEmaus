@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XXtRpzovOKVvZ2Jya/8HPwBjOggGu7rw2hvwuZucGcw=",
+  "Hash": "B1q2j5ZDali+sD9XyqbTf3XIrlvihK1OOIGUxjTkREI=",
   "Source": "prueba",
   "BasePath": "_content/prueba",
   "Mode": "Default",
@@ -729,23 +729,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\uno.jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\donacion.js",
-      "SourceId": "prueba",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\",
-      "BasePath": "_content/prueba",
-      "RelativePath": "js/donacion.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\donacion.js"
     },
     {
       "Identity": "C:\\Users\\cokem\\OneDrive\\Escritorio\\COMPUTACION VISUAL\\Front\\wwwroot\\js\\layout.js",

@@ -1,5 +1,5 @@
 ﻿body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 head {
@@ -24,7 +24,7 @@ svg {
 
     svg text {
         fill: white;
-        font-size: 100;
+        font-size: 35px;
         text-anchor: middle;
     }
 
