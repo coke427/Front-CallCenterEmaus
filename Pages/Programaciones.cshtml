@@ -1,0 +1,265 @@
+﻿@page
+@model emaus.Pages.SolicitudesModel
+@{
+    ViewData["Title"] = "Emaús";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emaús</title>
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/programaciones.css">
+</head>
+
+<body>
+
+    <script src="~/login/js/validateSesion.js"></script>
+
+    <!-- Contenido -->
+    <main class="col-md-9 col-lg-12 px-md-3" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2 class="h2" style="font-size:1.5rem">Programaciones</h2>
+                </div>
+                <div class="col-lg-6" style="text-align: left; margin-bottom:45px">
+                    <button type="button" id="refresh" class="btn btn-success" onClick="window.location.reload()">
+                        <span class="material-symbols-outlined">
+                            sync
+                        </span>
+                    </button>
+                </div>
+                <div style="padding-bottom: 9px; font-size:15px">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-sm custom-table" id="table_solicitudes">
+                                    <thead style="color: #023E73;">
+                                        <tr>
+                                            <th>Fecha de llamada</th>
+                                            <th>Hora de llamada</th>
+                                            <th>Día</th>
+                                            <th>Turno</th>
+                                            <th>Hora</th>
+                                            <th>Donación</th>
+                                            <th>Nombre</th>
+                                            <th>Tipo</th>
+                                            <th>Razón Social/Familia</th>
+                                            <th>Contacto</th>
+                                            <th>Teléfono</th>
+                                            <th>Dirección</th>
+                                            <th>Referencia</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_solicitudes"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS Personalizado -->
+    <script type="text/javascript" src="~/lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+    <!-- JS Personalizado -->
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/config.js"></script>
+    <script src="~/js/programacion.js?v=0.0.0.3"></script>
+
+    <!-- Modal Llamada entrante y registro de programacion -->
+    <div class="modal" id="modal_editar_solicitud" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Llamada entrante</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="tabset">
+                        <!-- Tab 1 -->
+                        <input type="radio" name="edit_tabset" id="edit_tab1" aria-controls="datos_llamada" checked>
+                        <label for="edit_tab1">DATOS DE LA LLAMADA</label>
+                        <!-- Tab 2 -->
+                        <input type="radio" name="edit_tabset" id="edit_tab2" aria-controls="programacion_donacion">
+                        <label for="edit_tab2">PROGRAMACIÓN Y DONACIÓN</label>
+
+                        <div class="tab-panels">
+
+                            <section id="datos_llamada" class="tab-panel">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
+                                            <input type="text" class="form-control" id="input_programacion_fecha_llamada" required autocomplete="off" disabled>
+
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Hora</span>
+                                            <input type="text" class="form-control" id="input_programacion_hora_llamada" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Nombres -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_nombres" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Apellidos -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_apellidos" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Tipo -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Tipo</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_tipo" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Razón Social / Familia -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Razón Social/Familia</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_nombre_tipo" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Contacto -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Contacto</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_contacto" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Teléfono -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Teléfono</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_telefono" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- dirección -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Dirección</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_direccion" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Referencia -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Referencia</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_referencia" required autocomplete="off" disabled>
+                                        </div>
+
+                                        <!-- Estado -->
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Estado</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_status" autocomplete="off" disabled>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="programacion_donacion" class="tab-panel">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <form onsubmit="return validarFormulario()">
+
+                                            <!-- Día -->
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Día</span>
+                                                <input type="date" class="form-control" id="input_programacion_dia" required>
+                                            </div>
+
+                                            <!-- turno -->
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Turno</span>
+                                                <select class="form-control custom-select" onchange="actualizarInputSelect('input')" id="input_programacion_turno" required>
+                                                </select>
+                                            </div>
+
+                                            <!-- hora -->
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Hora</span>
+                                                <select class="form-control custom-select" id="input_programacion_hora" required>
+                                                </select>
+                                            </div>
+
+                                            <!-- Donación -->
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Donación</span>
+                                                <textarea class="form-control" id="input_programacion_donacion" required autocomplete="off" style="height: 100px; resize: none;"></textarea>
+                                            </div>
+
+                                            <button id="boton_guardar_programacion" class="btn btn-sm btn-success ml-auto" type="submit">Guardar programación</button>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal editar programacion -->
+    <div class="modal" id="modal_editar_programacion" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar programación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <!-- Día -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Día</span>
+                                <input type="date" class="form-control" id="edit_programacion_dia" required>
+                            </div>
+
+                            <!-- turno -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Turno</span>
+                                <select class="form-control custom-select" onchange="actualizarInputSelect('edit')" id="edit_programacion_turno" required>
+                                </select>
+                            </div>
+
+                            <!-- hora -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Hora</span>
+                                <select class="form-control custom-select" id="edit_programacion_hora" required>
+                                </select>
+                            </div>
+
+                            <!-- Donación -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Donación</span>
+                                <textarea class="form-control" id="edit_programacion_donacion" required autocomplete="off" style="height: 100px; resize: none;"></textarea>
+                            </div>
+
+                            <button id="boton_edit_programacion" class="btn btn-sm btn-success ml-auto" type="submit">Actualizar programación</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

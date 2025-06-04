@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace prueba.Pages
+namespace emaus.Pages
 {
-    public class ContactoModel : PageModel
+    public class DonacionModel : PageModel
     {
         public void OnGet()
         {

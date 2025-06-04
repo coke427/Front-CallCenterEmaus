@@ -1,0 +1,132 @@
+﻿@page
+@model Emaús.Pages.TurnosModel
+@{
+    ViewData["Title"] = "Emaús";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emaús</title>
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/turno.css">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/jpeg" />
+
+</head>
+
+<body>
+
+    <script src="~/login/js/validateSesion.js"></script>
+
+    <!-- Contenido -->
+    <main class="col-md-9 col-lg-12 px-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2 class="h2" style="font-size:1.5rem">Turnos</h2>
+                </div>
+                <div class="col-lg-6" style="text-align: left; margin-bottom:45px">
+                    <button type="button" id="new_turno" class="btn btn-success" onClick="modalNewTurno()">
+                        Agregar
+                    </button>
+                    <button type="button" id="refresh" class="btn btn-success" onClick="window.location.reload()">
+                        <span class="material-symbols-outlined">
+                            sync
+                        </span>
+                    </button>
+                </div>
+                <div style="padding-bottom: 9px; font-size:15px">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="table-responsive">
+                                <table class="table table-sm custom-table" id="table_turno">
+                                    <thead style="color: #023E73;">
+                                        <tr>
+                                            <th>Turno</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_solicitudes"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS Personalizado -->
+    <script type="text/javascript" src="~/lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+    <!-- JS Personalizado -->
+    <script src="~/config.js"></script>
+    <script src="~/js/turno.js?v=0.0.02"></script>
+
+    <!-- Modal agregar turno -->
+    <div class="modal" id="modal_agregar_turno" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar turno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <form onsubmit="return guardarNewTurno()">
+
+                                <!-- Nombres -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                                    <input type="text" class="form-control" id="input_turno_nombre" required autocomplete="off">
+                                </div>
+
+                                <button id="boton_new_turno" class="btn btn-sm btn-success ml-auto" type="submit">Guardar</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal editar contribuyente -->
+    <div class="modal" id="modal_editar_turno" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar turno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <!-- Nombre -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                                <input type="text" class="form-control" id="edit_turno_nombre" required autocomplete="off">
+                            </div>
+
+                            <button id="boton_edit_turno" class="btn btn-sm btn-success ml-auto" type="submit">Actualizar</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

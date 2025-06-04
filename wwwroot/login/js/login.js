@@ -1,43 +1,63 @@
-﻿function IniciarSesion() {
-    var endpoint = hostApi + "/login/listaUsuarios";
+﻿function getDomain() {
+    return "http://" + window.location.host + "/FrontEmaus";
+}
+
+function IniciarSesion() {
+
     var email = $("#input_user_email").val().trim();
     var password = $("#input_user_password").val().trim();
 
+    var dataPost = {
+        user_email: email,
+        user_password: password
+    }
+
+    var endpoint = hostApi + "/api/Login/iniciarSesion";
     $.ajax({
-        type: "GET",
-        async: true,
+        type: "POST",
         url: endpoint,
         headers: {
             "Content-Type": "application/json"
         },
+        data: JSON.stringify(dataPost),
         dataType: "json",
         beforeSend: function (xhr) {
-            console.log("Cargando...");
+            console.log("Iniciando Sesión...");
         },
         success: function (data) {
-            console.log("Entrando a la función");
-
-            // Verificar las credenciales del usuario
-            var usuarioEncontrado = data[0]; // Acceder al primer elemento del array
-
-            // Verificar el estado del usuario
-            if (usuarioEncontrado && usuarioEncontrado.user_email === email && usuarioEncontrado.user_password === password && usuarioEncontrado.user_status === "A") {
-                console.log("Acceso concedido");
-                window.location.href = "https://localhost:7046/solicitudes";
+            console.log(data);
+            if (data.rpta == "0") {
+                datosUsuario = data.datosUsuario;
+                email = datosUsuario.user_email;
+                token = data.captcha;
+                almacenarToken(token, email);
+                window.location.replace(getDomain() + "/home");
             } else {
-                console.log("Credenciales inválidas o usuario inactivo");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops... Ocurrió un fallo',
+                    text: data.msg
+                })
             }
         },
-        error: function (xhr, status, error) {
-            console.log("Error al obtener la lista de usuarios");
-        },
-        fail: function (xhr, status, error) {
-            console.log("Error en la solicitud AJAX");
+        error: function (jqXHR) {
+            if (jqXHR.responseJSON.msg) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: jqXHR.responseJSON.msg
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops... Ocurrió un fallo!',
+                    text: 'Vuelve a intentarlo!'
+                })
+            }
         }
     });
+
 }
-
-
 $(document).ready(function () {
     $('#btn-show-password-usuario').on('mousedown', function () {
         $('#input_user_password').attr('type', 'text');
@@ -45,3 +65,16 @@ $(document).ready(function () {
         $('#input_user_password').attr('type', 'password');
     });
 });
+
+function almacenarToken(value1, value2) {
+
+    var tiempo = 70;
+
+    var fechaExpiracion = new Date();
+    fechaExpiracion.setTime(fechaExpiracion.getTime() + (tiempo * 1000));
+    var formatoFechaExpiracion = fechaExpiracion.toUTCString();
+    var cadenaCookie1 = "secure=" + encodeURIComponent(value1) + "; expires=" + formatoFechaExpiracion + "; path=/";
+    var cadenaCookie2 = "user=" + encodeURIComponent(value2) + "; expires=" + formatoFechaExpiracion + "; path=/";
+    document.cookie = cadenaCookie1;
+    document.cookie = cadenaCookie2;
+}

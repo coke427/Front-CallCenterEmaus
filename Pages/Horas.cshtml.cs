@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace prueba.Pages.Shared
+namespace Emaús.Pages
 {
-    public class SolicitudesModel : PageModel
+    public class HoraModel : PageModel
     {
         public void OnGet()
         {

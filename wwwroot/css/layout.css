@@ -20,3 +20,7 @@ body {
 .nav-link {
     font-weight: 700;
 }
+
+#menu_logout {
+    cursor: pointer;
+}

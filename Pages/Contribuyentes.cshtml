@@ -1,0 +1,258 @@
+﻿@page
+@model emaus.Pages.DonacionModel
+@{
+    ViewData["Title"] = "Emaús";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emaús</title>
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/contribuyentes.css">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/jpeg" />
+
+</head>
+
+<body>
+
+    <script src="~/login/js/validateSesion.js"></script>
+
+    <!-- Contenido -->
+    <main class="col-md-9 col-lg-12 px-md-3" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2 class="h2" style="font-size:1.5rem">Contribuyentes</h2>
+                </div>
+                <div class="col-lg-6" style="text-align: left; margin-bottom:45px">
+                    <button type="button" id="new_contribuyente" class="btn btn-success" onClick="modalNewContribuyente()">
+                        Agregar
+                    </button>
+                    <button type="button" id="refresh" class="btn btn-success" onClick="window.location.reload()">
+                        <span class="material-symbols-outlined">
+                            sync
+                        </span>
+                    </button>
+                </div>
+                <div style="padding-bottom: 9px; font-size:15px">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-sm custom-table" id="table_contribuyente">
+                                    <thead style="color: #023E73;">
+                                        <tr>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Tipo</th>
+                                            <th>Razón Social/Familia</th>
+                                            <th>Contacto</th>
+                                            <th>Teléfono</th>
+                                            <th>Dirección</th>
+                                            <th>Referencia</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_solicitudes"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS Personalizado -->
+    <script type="text/javascript" src="~/lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+    <!-- JS Personalizado -->
+    <script src="~/config.js"></script>
+    <script src="~/js/contribuyente.js?v=0.0.02"></script>
+
+    <!-- Modal agregar contribuyente -->
+    <div class="modal" id="modal_agregar_contribuyente" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar contribuyente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <form onsubmit="return guardarNewContribuyente()">
+
+                                <!-- Nombres -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_nombres" required autocomplete="off">
+                                </div>
+
+                                <!-- Apellidos -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_apellidos" required autocomplete="off">
+                                </div>
+
+                                <!-- tipo -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Tipo</span>
+                                    <select class="form-control custom-select" id="input_contribuyente_tipo" required>
+                                        <option value="" disabled selected>SELECCIONE...</option>
+                                        <option value="EMPRESA">EMPRESA</option>
+                                        <option value="FAMILIA">FAMILIA</option>
+                                    </select>
+                                </div>
+
+                                <!-- Razón Social / Familia -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Razón Social/Familia</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_nombre_tipo" required autocomplete="off">
+                                </div>
+
+                                <!-- Contacto -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Contacto</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_contacto" required autocomplete="off">
+                                </div>
+
+                                <!-- Teléfono -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Teléfono</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_telefono" required autocomplete="off">
+                                </div>
+
+                                <!-- dirección -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Dirección</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_direccion" required autocomplete="off">
+                                </div>
+
+                                <!-- Referencia -->
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Referencia</span>
+                                    <input type="text" class="form-control" id="input_contribuyente_referencia" required autocomplete="off">
+                                </div>
+
+                                <!-- Status -->
+                                <div class="form-group">
+                                    <label id="status" for="radio_status" class="col-form-label">Estado: </label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio_status" id="input_contribuyente_status_a" value="A" checked>
+                                        <label class="form-check-label" for="input_contribuyente_status_a">Activo</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio_status" id="input_contribuyente_status_i" value="I">
+                                        <label class="form-check-label" for="input_contribuyente_status_i">Inactivo</label>
+                                    </div>
+                                </div>
+
+                                <button id="boton_new_contribuyente" class="btn btn-sm btn-success ml-auto" type="submit">Guardar</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal editar contribuyente -->
+    <div class="modal" id="modal_editar_contribuyente" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar contribuyente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <!-- Nombres -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_nombres" required autocomplete="off">
+                            </div>
+
+                            <!-- Apellidos -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_apellidos" required autocomplete="off">
+                            </div>
+
+                            <!-- tipo -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Tipo</span>
+                                <select class="form-control custom-select" id="edit_contribuyente_tipo" required>
+                                    <option value="" disabled selected>SELECCIONE...</option>
+                                    <option value="EMPRESA">EMPRESA</option>
+                                    <option value="FAMILIA">FAMILIA</option>
+                                </select>
+                            </div>
+
+                            <!-- Razón Social / Familia -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Razón Social/Familia</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_nombre_tipo" required autocomplete="off">
+                            </div>
+
+                            <!-- Contacto -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Contacto</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_contacto" autocomplete="off">
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Teléfono</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_telefono" autocomplete="off">
+                            </div>
+
+                            <!-- dirección -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Dirección</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_direccion" autocomplete="off">
+                            </div>
+
+                            <!-- Referencia -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Referencia</span>
+                                <input type="text" class="form-control" id="edit_contribuyente_referencia" autocomplete="off">
+                            </div>
+
+                            <!-- Status -->
+                            <div class="form-group">
+                                <label id="status" for="radio_status" class="col-form-label">Estado: </label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_zona_status" id="edit_contribuyente_status_a" value="A">
+                                    <label class="form-check-label" for="inlineRadio1">Activo</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_zona_status" id="edit_contribuyente_status_i" value="I">
+                                    <label class="form-check-label" for="inlineRadio2">Inactivo</label>
+                                </div>
+                            </div>
+
+                            <button id="boton_edit_contribuyente" class="btn btn-sm btn-success ml-auto" type="submit">Actualizar</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

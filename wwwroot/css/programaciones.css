@@ -1,4 +1,4 @@
-#acciones {
+﻿#acciones {
     padding-left: 2.3rem;
     font-size: 19px;
 }
@@ -83,4 +83,13 @@ input:focus-visible + label {
 .tab-panel {
     padding: 30px 0;
     border-top: 1px solid #ccc;
+}
+
+.swal2-cancel .btn .btn-danger {
+    margin-right: 5px;
+
+}
+
+.swal2-confirm .btn .btn-success{
+    margin-left: 5px;
 }

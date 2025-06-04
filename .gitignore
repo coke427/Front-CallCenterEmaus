@@ -1,0 +1,77 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Compilación
+bin/
+obj/
+
+# Publicación
+Properties/PublishProfiles/
+
+# Librerías locales
+lib/
+# Compilación
+bin/
+obj/
+*.exe
+*.dll
+
+# Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configuración local
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+
+# Archivos secretos y de despliegue
+secrets.json
+*.pfx
+*.key
+*.crt
+
+# Fly.io
+fly.toml
+
+# Archivos de lock / caché
+project.lock.json
+project.fragment.lock.json
+*.log
+*.tmp
+*.bak
+
+# Libman
+libman.json
+wwwroot/lib/
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos de configuración de Git
+.gitattributes
+*.orig
+
+# Archivos de sistema y de usuario
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# OneDrive u otros servicios en la ruta
+~$*
+*.lnk
+
+# Carpetas comunes del proyecto
+.config/
+Properties/launchSettings.json
+
+# Node.js (por si usas algo de front)
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json

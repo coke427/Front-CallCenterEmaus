@@ -1,66 +1,54 @@
 ﻿@page
-@model IndexModel
+@model emaus.Pages.loginModel
 @{
-    ViewData["Title"] = "EcoGreen"; 
+    Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecogreen</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="~/css/index.css">
-</head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="~/css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+</head>
 <body>
 
-    <!-- Body -->
-    <div style="margin-bottom: 20px;">
-        <img src="~/img/crousel.jpg" width="100%">
-    </div>
+    <script src="~/lib/code.jquery.com_jquery-3.6.0.min.js"></script>
+    <script src="~/config.js"></script>
+    <script src="~/login/js/login.js?v=0.0.02"></script>
+    
 
-    <!-- Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 column">
-                <img src="img/icons8-palm-tree-50.png" height="70px" style="margin-bottom: 15px;">
-                <h3>Planta Árboles</h3>
-                <p>
-                    Cuando salvas la vida de un árbol, simplemente pagas tu deuda, ya que debemos nuestras vidas a los
-                    árboles.
-                </p>
+    <section class="left-form"></section>
+
+    <section class="right-form">
+        <form>
+            <h2>Traperos de Emaús</h2>
+            <label for="usuario">Email:</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="input_user_email" required>
             </div>
-            <div class="col-md-2 column">
-                <img src="~/img/reciclar (1).png" height="70px" style="margin-bottom: 15px;">
-                <h3>Recicla</h3>
-                <p>Reciclar es la clave para que todo funcione: Separar cada envase en su contenedor.</p>
+            <label for="password">Password</label>
+            <div class="input-group">
+                <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="input_user_password">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <button id="btn-show-password-usuario" class="btn btn-show-password" type="button">
+                            <span style="font-size:20px; display:flex" class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2 column">
-                <img src="~/img/icons8-water-64.png" height="70px" style="margin-bottom: 15px;">
-                <h3>Ahorra Agua</h3>
-                <p>Salva un 60% de ti mismo. El agua es vida y el agua limpia significa salud. </p>
-            </div>
-            <div class="col-md-2 column">
-                <img src="~/img/icons8-solar-panels-50.png" height="70px" style="margin-bottom: 15px;">
-                <h3>Utiliza Paneles</h3>
-                <p>La energía solar es una forma segura de energía nuclear.</p>
-            </div>
-            <div class="col-md-3 column">
-                <img src="~/img/icons8-green-energy-64.png" height="70px" style="margin-bottom: 15px;">
-                <h3>Ahorra Energía</h3>
-                <p>
-                    La energía es parte vital del funcionamiento de nuestro mundo moderno, ahorrar energía es deber de
-                    todos.
-                </p>
-            </div>
-        </div>
-    </div>
+
+            <button id="login" class="btn btn-success" type="button" onclick="IniciarSesion()"> Iniciar Sesion </button>
+        </form>
+    </section>
+
 </body>
-
 </html>
