@@ -53,8 +53,8 @@ function getListContribuyentes() {
                     "<td>" + dataContribuyentes[i].contribuyente_referencia + "</td>" +
                     "<td>" + dataContribuyentes[i].contribuyente_status + "</td>" +
                     "<td id='acciones'>" +
-                    "<i style='color: #FAA716' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
-                    "<i style='margin-left: 9px; color: red' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
+                    "<i style='color: #157347' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
+                    "<i style='margin-left: 9px; color: #157347' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
                     "</td>" +
                     "</tr>";
 
@@ -75,11 +75,20 @@ function getListContribuyentes() {
                 // Inicializar DataTable en la tabla
                 tableSolicitudes = $("#table_contribuyente").DataTable({
                     language: {
-                        url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json' // URL de la biblioteca de idioma
+                        url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
                     },
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'pdf'
+                        {
+                            extend: 'excel',
+                            text: '<img src="/img/excel.png" alt="Excel" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        },
+                        {
+                            extend: 'pdf',
+                            text: '<img src="/img/pdf.png" alt="PDF" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        }
                     ]
                 });
             }

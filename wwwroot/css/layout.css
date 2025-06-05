@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-    background-color: #25A722;
+    background-color: #157347;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ body {
 .navbar-brand {
     font-size: 28px;
     font-weight: 700;
-    color: #25A722;
+    color: #157347;
 }
 
 .nav-link {
