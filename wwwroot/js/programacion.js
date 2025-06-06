@@ -76,8 +76,8 @@ function getListProgramaciones() {
                         "<td>" + dataProgramaciones[i].contribuyente_direccion + "</td>" +
                         "<td>" + dataProgramaciones[i].contribuyente_referencia + "</td>" +
                         "<td id='acciones'>" +
-                             "<i style='color: #FAA716' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
-                             "<i style='margin-left: 9px; color: red' class='bx bx-trash eliminar_button' id='eliminar_programacion'></i>" +
+                             "<i style='color: #157347' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
+                             "<i style='margin-left: 9px; color: #157347' class='bx bx-trash eliminar_button' id='eliminar_programacion'></i>" +
                         "</td>" +
                     "</tr>";
 
@@ -102,7 +102,16 @@ function getListProgramaciones() {
                     },
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'pdf'
+                        {
+                            extend: 'excel',
+                            text: '<img src="/img/excel.png" alt="Excel" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        },
+                        {
+                            extend: 'pdf',
+                            text: '<img src="/img/pdf.png" alt="PDF" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        }
                     ]
                 });
             }

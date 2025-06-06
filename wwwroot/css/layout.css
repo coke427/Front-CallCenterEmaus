@@ -2,15 +2,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.navbar {
-    background-color: #157347;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-}
-
 .navbar-brand {
     font-size: 28px;
     font-weight: 700;
@@ -23,4 +14,36 @@ body {
 
 #menu_logout {
     cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: transparent;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+    .navbar .nav-link {
+        color: #157347 !important;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+        .navbar .nav-link:hover {
+            color: #0f5e36 !important;
+        }
+
+.logout-link {
+    font-weight: 600;
+    color: #157347 !important;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-brand img {
+    height: 60px;
 }

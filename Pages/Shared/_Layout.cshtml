@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <!-- Bootstrap CSS -->
@@ -29,42 +30,39 @@
     
     <div>
         <main>
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                    @*<a class="navbar-brand" href="#">
-                        <img src="img/cf60ae7baf0842328e2ca01b02e43b0c.png" height="60px">
-                    </a>*@
-                    <button class="navbar-toggler" type="button" id="button" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+                    <a class="navbar-brand ms-auto" href="#">
+                        <img src="~/img/logoEmaus.png" height="60px" alt="Logo Emaús">
+                    </a>
+
+                    <!-- Menú centrado -->
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav text-center">
                             <li class="nav-item">
-                                <a id="menu_contribuyente" class="nav-link" href="http://app.sarghesa.com/FrontEmaus/contribuyentes">Contribuyentes</a>
+                                <a id="menu_contribuyente" class="nav-link" href="https://localhost:7046/contribuyentes">Contribuyentes</a>
                             </li>
                             <li class="nav-item">
-                                <a id="menu_programacion" class="nav-link" href="http://app.sarghesa.com/FrontEmaus/programaciones">Programaciones</a>
+                                <a id="menu_programacion" class="nav-link" href="https://localhost:7046/programaciones">Programaciones</a>
                             </li>
                             <li class="nav-item">
-                                <a id="menu_turno" class="nav-link" href="http://app.sarghesa.com/FrontEmaus/turnos">Turnos</a>
+                                <a id="menu_turno" class="nav-link" href="https://localhost:7046/turnos">Turnos</a>
                             </li>
                             <li class="nav-item">
-                                <a id="menu_hora" class="nav-link" href="http://app.sarghesa.com/FrontEmaus/horas">Horas</a>
-                            </li>
-                            @*<li class="nav-item">
-                            <a id="menu_login" class="nav-link" href="http://app.sarghesa.com/FrontEmaus/login">Iniciar Sesión</a>
-                            </li>*@
-                            <li class="nav-item">
-                                <a id="menu_logout" class="nav-link" onclick="logout()">Cerrar Sesión</a>
+                                <a id="menu_hora" class="nav-link" href="https://localhost:7046/horas">Horas</a>
                             </li>
                         </ul>
                     </div>
+
+                    <a id="menu_logout" class="nav-link logout-link" onclick="logout()" title="Cerrar sesión">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+
                 </div>
             </nav>
-            @RenderBody()
-
+            <div class="content">
+                @RenderBody()
+            </div>
         </main>
     </div>
 

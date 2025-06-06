@@ -63,7 +63,16 @@ function getListTurnos() {
                     },
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'pdf'
+                        {
+                            extend: 'excel',
+                            text: '<img src="/img/excel.png" alt="Excel" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        },
+                        {
+                            extend: 'pdf',
+                            text: '<img src="/img/pdf.png" alt="PDF" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        }
                     ]
                 });
             }
