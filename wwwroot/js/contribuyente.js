@@ -53,8 +53,8 @@ function getListContribuyentes() {
                     "<td>" + dataContribuyentes[i].contribuyente_referencia + "</td>" +
                     "<td>" + dataContribuyentes[i].contribuyente_status + "</td>" +
                     "<td id='acciones'>" +
-                    "<i style='color: #157347' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
-                    "<i style='margin-left: 9px; color: #157347' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
+                    "<i style='color: #FAA716' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
+                    "<i style='margin-left: 9px; color: red' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
                     "</td>" +
                     "</tr>";
 
@@ -380,3 +380,9 @@ function eliminarContribuyente(contribuyente_id) {
         }
     });
 }
+
+document.addEventListener('hidden.bs.modal', function (event) {
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+});

@@ -2,14 +2,13 @@
     padding-left: 2.3rem;
     font-size: 19px;
 }
-
+#new_turno,
 #refresh {
     text-align: center;
     display: inline-flex;
 }
 
 /* tabs */
-
 .tabset > input[type="radio"] {
     position: absolute;
     left: -200vw;
@@ -65,13 +64,13 @@ input:focus-visible + label {
 .tabset > label:hover,
 .tabset > input:focus + label,
 .tabset > input:checked + label {
-    color: #06c;
+    color: #157347;
 }
 
     .tabset > label:hover::after,
     .tabset > input:focus + label::after,
     .tabset > input:checked + label::after {
-        background: #06c;
+        background: #157347;
     }
 
 .tabset > input:checked + label {

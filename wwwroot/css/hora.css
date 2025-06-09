@@ -3,13 +3,13 @@
     font-size: 19px;
 }
 
+#new_hora,
 #refresh {
     text-align: center;
     display: inline-flex;
 }
 
 /* tabs */
-
 .tabset > input[type="radio"] {
     position: absolute;
     left: -200vw;
@@ -84,3 +84,125 @@ input:focus-visible + label {
     padding: 30px 0;
     border-top: 1px solid #ccc;
 }
+#table_hora {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+    border: none;
+}
+
+    /* Encabezado con fondo verde y texto blanco */
+    #table_hora thead {
+        background-color: #157347;
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+    }
+
+        /* Bordes redondeados solo en esquinas superiores del thead */
+        #table_hora thead th:first-child {
+            border-top-left-radius: 12px;
+        }
+
+        #table_hora thead th:last-child {
+            border-top-right-radius: 12px;
+        }
+
+    /* Celdas */
+    #table_hora th,
+    #table_hora td {
+        padding: 12px 14px;
+        border-bottom: 1px solid #e0e0e0;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    /* Filas alternadas */
+    #table_hora tbody tr:nth-child(odd) {
+        background-color: #f6f6f6;
+    }
+
+    #table_hora tbody tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+    #table_hora tbody tr:hover {
+        background-color: #d4ede1;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+/* Botones DataTable */
+.dt-buttons .dt-button:not(.btn-export-icon) {
+    background-color: #157347 !important;
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.dt-buttons .btn-export-icon {
+    all: unset;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    line-height: 0;
+    background: transparent !important;
+    border: none !important;
+}
+
+    .dt-buttons .btn-export-icon:hover,
+    .dt-buttons .btn-export-icon:focus,
+    .dt-buttons .btn-export-icon:active {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        transform: scale(1.1);
+    }
+
+/* ======== FILTRO DATATABLE ======== */
+#table_hora_filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    #table_hora_filter label {
+        font-weight: 500;
+        color: #333;
+        font-size: 14px;
+    }
+
+    #table_hora_filter input {
+        margin-left: 10px;
+        padding: 7px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: #fafafa;
+        transition: border-color 0.3s;
+    }
+
+        #table_hora_filter input:focus {
+            border-color: #38B000;
+            background-color: #ffffff;
+            outline: none;
+        }

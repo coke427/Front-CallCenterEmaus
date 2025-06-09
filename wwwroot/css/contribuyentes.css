@@ -1,6 +1,7 @@
-﻿#acciones {
-    padding-left: 2.3rem;
-    font-size: 19px;
+﻿#new_contribuyente,
+#refresh {
+    text-align: center;
+    display: inline-flex;
 }
 
 /* tabs */
@@ -26,11 +27,6 @@
 /*
  Styling
 */
-body {
-    font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
-    color: #333;
-    font-weight: 300;
-}
 
 .tabset > label {
     position: relative;
@@ -60,13 +56,13 @@ input:focus-visible + label {
 .tabset > label:hover,
 .tabset > input:focus + label,
 .tabset > input:checked + label {
-    color: #06c;
+    color: #157347;
 }
 
     .tabset > label:hover::after,
     .tabset > input:focus + label::after,
     .tabset > input:checked + label::after {
-        background: #06c;
+        background: #157347;
     }
 
 .tabset > input:checked + label {
@@ -81,10 +77,9 @@ input:focus-visible + label {
 }
 
 body {
-    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
+    font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
     color: #333;
-    background-color: #ffffff;
+    font-weight: 300;
 }
 
 /* ======== TABLA ESTILIZADA CON BORDE REDONDEADO ======== */
@@ -180,21 +175,6 @@ body {
         outline: none !important;
         transform: scale(1.1);
     }
-
-/*.material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 18px;
-    display: inline-block;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-}*/
 
 /* ======== FILTRO DATATABLE ======== */
 #table_contribuyente_filter {

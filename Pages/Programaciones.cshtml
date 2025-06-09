@@ -14,6 +14,8 @@
 
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="~/css/programaciones.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 
 <body>
@@ -28,6 +30,11 @@
                     <h2 class="h2" style="font-size:1.5rem">Programaciones</h2>
                 </div>
                 <div class="col-lg-6" style="text-align: left; margin-bottom:45px">
+                    <button type="button" id="new_contribuyente" class="btn btn-success" onClick="modalNewProgramacion()">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
                     <button type="button" id="refresh" class="btn btn-success" onClick="window.location.reload()">
                         <span class="material-symbols-outlined">
                             sync
@@ -101,65 +108,66 @@
 
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                                            <input type="text" class="form-control" id="input_programacion_fecha_llamada" required autocomplete="off" disabled>
+                                            <input type="date" class="form-control" id="input_programacion_fecha_llamada" required autocomplete="off">
 
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Hora</span>
-                                            <input type="text" class="form-control" id="input_programacion_hora_llamada" required autocomplete="off" disabled>
+                                            <input type="time" class="form-control" id="input_programacion_hora_llamada" step="1" required autocomplete="off">
                                         </div>
 
-                                        <!-- Nombres -->
+                                        <!-- Nombres / Apellidos -->
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_nombres" required autocomplete="off" disabled>
-                                        </div>
+                                            <input type="text" class="form-control" id="input_contribuyente_nombres" required autocomplete="off">
 
-                                        <!-- Apellidos -->
-                                        <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_apellidos" required autocomplete="off" disabled>
+                                            <input type="text" class="form-control" id="input_contribuyente_apellidos" required autocomplete="off">
                                         </div>
 
                                         <!-- Tipo -->
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Tipo</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_tipo" required autocomplete="off" disabled>
+                                            <select class="form-control custom-select" id="input_contribuyente_tipo" required>
+                                                <option value="" disabled selected>SELECCIONE...</option>
+                                                <option value="EMPRESA">EMPRESA</option>
+                                                <option value="FAMILIA">FAMILIA</option>
+                                            </select>
                                         </div>
 
                                         <!-- Razón Social / Familia -->
                                         <div class="input-group input-group-sm mb-3">
-                                            <span class="input-group-text" id="inputGroup-sizing-sm">Razón Social/Familia</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_nombre_tipo" required autocomplete="off" disabled>
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Razón Social / Familia</span>
+                                            <select type="text" class="form-control" id="input_contribuyente_nombre_tipo" required autocomplete="off">
+
+                                            </select>
                                         </div>
 
-                                        <!-- Contacto -->
+                                        <!-- Contacto / Teléfono-->
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Contacto</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_contacto" required autocomplete="off" disabled>
-                                        </div>
+                                            <input type="text" class="form-control" id="input_contribuyente_contacto" required autocomplete="off">
 
-                                        <!-- Teléfono -->
-                                        <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Teléfono</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_telefono" required autocomplete="off" disabled>
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">+51</span>
+                                            <input type="text" class="form-control" id="input_contribuyente_telefono" required autocomplete="off">
                                         </div>
 
                                         <!-- dirección -->
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Dirección</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_direccion" required autocomplete="off" disabled>
+                                            <input type="text" class="form-control" id="input_contribuyente_direccion" required autocomplete="off">
                                         </div>
 
                                         <!-- Referencia -->
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Referencia</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_referencia" required autocomplete="off" disabled>
+                                            <input type="text" class="form-control" id="input_contribuyente_referencia" required autocomplete="off">
                                         </div>
 
-                                        <!-- Estado -->
+@*                                         <!-- Estado -->
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Estado</span>
-                                            <input type="text" class="form-control" id="input_contribuyente_status" autocomplete="off" disabled>
-                                        </div>
+                                            <input type="text" class="form-control" id="input_contribuyente_status" autocomplete="off">
+                                        </div> *@
 
                                     </div>
                                 </div>
@@ -260,6 +268,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 </body>
 </html>

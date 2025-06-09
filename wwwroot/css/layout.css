@@ -1,4 +1,4 @@
-body {
+﻿body {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -8,12 +8,14 @@ body {
     color: #157347;
 }
 
-.nav-link {
-    font-weight: 700;
-}
+
 
 #menu_logout {
     cursor: pointer;
+}
+
+.navbar-nav{
+    gap: 20px;
 }
 
 .navbar {
@@ -30,10 +32,13 @@ body {
         color: #157347 !important;
         font-weight: 600;
         font-size: 16px;
+        border-bottom: 2px solid transparent; /* ← Esto asegura que todos ocupen el mismo espacio */
+        padding-bottom: 4px; /* Opcional: para que el texto no quede tan pegado */
     }
 
-        .navbar .nav-link:hover {
-            color: #0f5e36 !important;
+        .navbar .nav-link.active {
+            color: #0a3622 !important;
+            border-bottom: 2px solid #0a3622;
         }
 
 .logout-link {
@@ -46,4 +51,10 @@ body {
 
 .navbar-brand img {
     height: 60px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #146c43 !important;
+    border-radius: 50%;
+    border: none;
+    color: #fff !important;
 }

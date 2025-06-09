@@ -1,14 +1,15 @@
 ﻿$(document).ready(function () {
     getListProgramaciones();
+    obtenerContribuyentes();
 });
 
 var connection = new signalR.HubConnectionBuilder()
-                .configureLogging(signalR.LogLevel.None)
-                .withUrl( hostApi + "/receiveCall", {
-                    skipNegotiation: true,
-                    transport: signalR.HttpTransportType.WebSockets
-                })
-                .build();
+    .configureLogging(signalR.LogLevel.None)
+    .withUrl(hostApi + "/receiveCall", {
+        skipNegotiation: true,
+        transport: signalR.HttpTransportType.WebSockets
+    })
+    .build();
 
 connection.start().then(function () {
 }).catch(function (err) {
@@ -20,6 +21,73 @@ connection.on("Receive", function (phoneNumber) {
     $("#modal_editar_solicitud .modal-title").html("Llamada entrante <span style='color: #0F5FA6'><strong>" + phoneNumber + "</strong></span>");
     $("#modal_editar_solicitud").modal("show");
 })
+
+async function modalNewProgramacion() {
+    $("#modal_editar_solicitud .modal-title").text("Ingresar Programación");
+    $("#modal_editar_solicitud").modal("show");
+
+    try {
+        var dataTurnos = await getListTurnos();
+
+        $("#input_programacion_turno").empty();
+        $("#input_programacion_turno").append('<option value="" disabled selected>Seleccione un Turno...</option>');
+
+        for (var i = 0; i < dataTurnos.length; i++) {
+            var item = dataTurnos[i];
+            var turno_nombre = capitalizarPrimeraLetra(item.turno_nombre);
+            $("#input_programacion_turno").append(
+                '<option value="' + item.turno_id + '">' + turno_nombre + '</option>'
+            );
+        }
+
+        $("#input_programacion_turno").off("change").on("change", async function () {
+            const turnoId = $(this).val();
+
+            if (turnoId) {
+                try {
+                    const dataHoras = await getListHoras(turnoId);
+
+                    $("#input_programacion_hora").empty();
+                    $("#input_programacion_hora").append('<option value="" disabled selected>Seleccione una Hora...</option>');
+
+                    for (var j = 0; j < dataHoras.length; j++) {
+                        var itemHora = dataHoras[j];
+                        $("#input_programacion_hora").append(
+                            '<option value="' + itemHora.hora_id + '">' + itemHora.hora_descripcion + '</option>'
+                        );
+                    }
+                } catch (error) {
+                    Swal.error("Error al cargar horas:", error);
+                    $("#input_programacion_hora").empty();
+                    $("#input_programacion_hora").append('<option value="" disabled>Error al cargar horas</option>');
+                }
+            } else {
+                $("#input_programacion_hora").empty();
+                $("#input_programacion_hora").append('<option value="" disabled selected>Seleccione una Hora...</option>');
+            }
+        });
+
+    } catch (error) {
+        Swal.error(error);
+        $("#input_programacion_turno").empty();
+        $("#input_programacion_turno").append('<option value="" disabled>Error al cargar turnos</option>');
+    }
+
+    $("#boton_guardar_programacion").off("click").on("click", function () {
+        const contribuyente_id = $("#input_contribuyente_nombre_tipo").val();
+        guardarNewProgramacion(contribuyente_id);
+    });
+}
+
+function convertirHora12(hora24) {
+    if (!hora24) return "";
+    var [hora, minutos, segundos] = hora24.split(':');
+    hora = parseInt(hora, 10);
+    var ampm = hora >= 12 ? 'PM' : 'AM';
+    hora = hora % 12;
+    hora = hora ? hora : 12; // la hora '0' debe ser '12'
+    return `${hora}:${minutos}:${segundos} ${ampm}`;
+}
 
 function getListProgramaciones() {
 
@@ -49,8 +117,9 @@ function getListProgramaciones() {
 
             for (var i = 0; i < dataProgramaciones.length; i++) {
 
-                datosRow +=
+                var hora12 = convertirHora12(dataProgramaciones[i].programacion_hora_llamada);
 
+                datosRow +=
                     "<tr class='filaTabla' " +
                     "data-programacion_id='" + dataProgramaciones[i].programacion_id + "' " +
                     "data-programacion_fecha_llamada='" + dataProgramaciones[i].programacion_fecha_llamada + "' " +
@@ -62,25 +131,24 @@ function getListProgramaciones() {
                     "data-hora_nombre='" + dataProgramaciones[i].hora_nombre + "' " +
                     "data-programacion_donacion='" + dataProgramaciones[i].programacion_donacion + "' " +
                     "data-contribuyente_id='" + dataProgramaciones[i].contribuyente_id + "'>" +
-                        "<td>" + dataProgramaciones[i].programacion_fecha_llamada + "</td>" +
-                        "<td>" + dataProgramaciones[i].programacion_hora_llamada + "</td>" +
-                        "<td>" + dataProgramaciones[i].programacion_dia + "</td>" +
-                        "<td>" + dataProgramaciones[i].turno_nombre + "</td>" +
-                        "<td>" + dataProgramaciones[i].hora_nombre + "</td>" +
-                        "<td>" + dataProgramaciones[i].programacion_donacion + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_nombre_completo + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_tipo + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_nombre_tipo + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_contacto + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_telefono + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_direccion + "</td>" +
-                        "<td>" + dataProgramaciones[i].contribuyente_referencia + "</td>" +
-                        "<td id='acciones'>" +
-                             "<i style='color: #157347' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
-                             "<i style='margin-left: 9px; color: #157347' class='bx bx-trash eliminar_button' id='eliminar_programacion'></i>" +
-                        "</td>" +
+                    "<td>" + dataProgramaciones[i].programacion_fecha_llamada + "</td>" +
+                    "<td>" + hora12 + "</td>" +
+                    "<td>" + dataProgramaciones[i].programacion_dia + "</td>" +
+                    "<td>" + dataProgramaciones[i].turno_nombre + "</td>" +
+                    "<td>" + dataProgramaciones[i].hora_nombre + "</td>" +
+                    "<td>" + dataProgramaciones[i].programacion_donacion + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_nombre_completo + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_tipo + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_nombre_tipo + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_contacto + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_telefono + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_direccion + "</td>" +
+                    "<td>" + dataProgramaciones[i].contribuyente_referencia + "</td>" +
+                    "<td id='acciones'>" +
+                    "<i style='color: #FAA716' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
+                    "<i style='margin-left: 9px; color: red' class='bx bx-trash eliminar_button' id='eliminar_programacion'></i>" +
+                    "</td>" +
                     "</tr>";
-
             }
 
             $(document).on('click', '.editar_button', function () {
@@ -93,12 +161,10 @@ function getListProgramaciones() {
                 modalConfirmacionEliminar(rowData.programacion_id);
             });
 
-            // Eliminar los datos de la tabla existente
             if (!$("#table_solicitudes").hasClass("dataTable")) {
-                // Inicializar DataTable en la tabla
                 tableSolicitudes = $("#table_solicitudes").DataTable({
                     language: {
-                        url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json' // URL de la biblioteca de idioma
+                        url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
                     },
                     dom: 'Bfrtip',
                     buttons: [
@@ -116,10 +182,7 @@ function getListProgramaciones() {
                 });
             }
 
-            // Agregar los nuevos datos a la tabla
             tableSolicitudes.rows.add($(datosRow)).draw();
-
-
         },
         failure: function (data) {
             Swal.close();
@@ -238,28 +301,41 @@ function getUser() {
             const fechaHoraActual = new Date();
 
             // Obtener la fecha en formato "dd/mm/yyyy"
+            //const fecha = () => {
+            //    const dia = String(fechaHoraActual.getDate()).padStart(2, '0');
+            //    const mes = String(fechaHoraActual.getMonth() + 1).padStart(2, '0'); // ¡Recuerda que en JavaScript los meses comienzan desde 0!
+            //    const anio = fechaHoraActual.getFullYear();
+            //    return `${dia}/${mes}/${anio}`;
+            //};
             const fecha = () => {
                 const dia = String(fechaHoraActual.getDate()).padStart(2, '0');
-                const mes = String(fechaHoraActual.getMonth() + 1).padStart(2, '0'); // ¡Recuerda que en JavaScript los meses comienzan desde 0!
+                const mes = String(fechaHoraActual.getMonth() + 1).padStart(2, '0');
                 const anio = fechaHoraActual.getFullYear();
-                return `${dia}/${mes}/${anio}`;
+                return `${anio}-${mes}-${dia}`; // yyyy-MM-dd
             };
+
 
             // Obtener la hora en formato "hh:mm:ss am/pm"
+            //const hora = () => {
+            //    let horas = fechaHoraActual.getHours();
+            //    const minutos = String(fechaHoraActual.getMinutes()).padStart(2, '0');
+            //    const segundos = String(fechaHoraActual.getSeconds()).padStart(2, '0');
+            //    const periodo = horas >= 12 ? 'pm' : 'am';
+
+            //    // Convertir de formato de 24 horas a formato de 12 horas
+            //    horas = horas % 12 || 12;
+
+            //    return `${horas}:${minutos}:${segundos} ${periodo}`;
+            //};
             const hora = () => {
-                let horas = fechaHoraActual.getHours();
+                const horas = String(fechaHoraActual.getHours()).padStart(2, '0');
                 const minutos = String(fechaHoraActual.getMinutes()).padStart(2, '0');
                 const segundos = String(fechaHoraActual.getSeconds()).padStart(2, '0');
-                const periodo = horas >= 12 ? 'pm' : 'am';
-
-                // Convertir de formato de 24 horas a formato de 12 horas
-                horas = horas % 12 || 12;
-
-                return `${horas}:${minutos}:${segundos} ${periodo}`;
+                return `${horas}:${minutos}:${segundos}`; // HH:mm:ss
             };
 
-            $("#input_programacion_fecha_llamada").val(fecha);
-            $("#input_programacion_hora_llamada").val(hora);
+            $("#input_programacion_fecha_llamada").val(fecha());
+            $("#input_programacion_hora_llamada").val(hora());
             $("#input_contribuyente_nombres").val(dataContribuyente[0].contribuyente_nombres);
             $("#input_contribuyente_apellidos").val(dataContribuyente[0].contribuyente_apellidos);
             $("#input_contribuyente_tipo").val(dataContribuyente[0].contribuyente_tipo);
@@ -268,7 +344,7 @@ function getUser() {
             $("#input_contribuyente_telefono").val(dataContribuyente[0].contribuyente_telefono);
             $("#input_contribuyente_direccion").val(dataContribuyente[0].contribuyente_direccion);
             $("#input_contribuyente_referencia").val(dataContribuyente[0].contribuyente_referencia);
-            $("#input_contribuyente_status").val(dataContribuyente[0].contribuyente_status); 3
+            /*            $("#input_contribuyente_status").val(dataContribuyente[0].contribuyente_status); 3*/
 
             var dataTurnos = await getListTurnos();
 
@@ -285,7 +361,7 @@ function getUser() {
                 );
             }
 
-            $("#boton_guardar_programacion").on("click", function () {
+            $("#boton_guardar_programacion").off("click").on("click", function () {
                 guardarNewProgramacion(dataContribuyente[0].contribuyente_id);
             });
 
@@ -298,13 +374,18 @@ function getUser() {
     });
 }
 
-function guardarNewProgramacion(contribuyente_id) {
+function guardarNewProgramacion(contribuyente_id_param) {
+    var contribuyente_id = contribuyente_id_param || $("#input_contribuyente_nombre_tipo").val();
+
+    if (!contribuyente_id) {
+        Swal.fire("Atención", "Debe seleccionar una Razón Social / Familia", "warning");
+        return;
+    }
 
     var token = obtenerValorDeCookie("secure");
-
     var form = document.querySelector('form');
-    if (form.checkValidity()) {
 
+    if (form.checkValidity()) {
         var fechaOriginal = $("#input_programacion_dia").val();
         var programacion_dia = convertirFechaCorrecta(fechaOriginal);
 
@@ -331,7 +412,7 @@ function guardarNewProgramacion(contribuyente_id) {
             },
             data: JSON.stringify(dataPost),
             dataType: "json",
-            beforeSend: function (xhr) {
+            beforeSend: function () {
                 console.log("Guardando...");
             },
             success: function (data) {
@@ -339,16 +420,12 @@ function guardarNewProgramacion(contribuyente_id) {
                 var msg = data.item2;
 
                 if (rpta == "0") {
-                    Swal.fire('Guardado', '', 'success');
-                    setTimeout(function () {
-                        location.reload();
-                    }, 800);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: msg,
+                    swal.fire("Registrado", "", "success").then(() => {
+                        getListProgramaciones();
+                        $("#modal_editar_solicitud").modal("hide");
                     });
+                } else {
+                    Swal.fire("Error", msg, "error");
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -360,7 +437,6 @@ function guardarNewProgramacion(contribuyente_id) {
             }
         });
     }
-
 }
 
 function capitalizarPrimeraLetra(texto) {
@@ -385,7 +461,6 @@ function guardarEditProgramacion(rowData) {
     };
 
     dataPost = trimJSONFields(dataPost);
-    console.log(dataPost);
 
     var endpoint = hostApi + "/api/Programacion/UpdProgramacion";
 
@@ -513,9 +588,7 @@ function eliminarProgramacion(programacion_id) {
             var rpta = data.item1;
             var msg = data.item2;
             if (rpta == "0") {
-                setTimeout(function () {
-                    location.reload();
-                }, 800);
+                location.reload();
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -611,3 +684,58 @@ function getListHoras(turno_id) {
 
     });
 }
+function obtenerContribuyentes() {
+    var endpoint = hostApi + "/api/Contribuyente/GetContribuyentes_select";
+    var token = obtenerValorDeCookie("secure");
+
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "GET",
+            async: true,
+            url: endpoint,
+            headers: {
+                "Authorization": 'Bearer ' + token,
+                "Content-Type": "application/json"
+            },
+            dataType: "json",
+            success: function (data) {
+                var dataRazonSocial = data.item3;
+
+                var $select = $("#input_contribuyente_nombre_tipo");
+                $select.empty();
+                $select.append('<option value="" selected disabled>Seleccione...</option>');
+
+                if (dataRazonSocial && dataRazonSocial.length > 0) {
+                    dataRazonSocial.forEach(function (item) {
+                        $select.append('<option value="' + item.contribuyente_id + '">' + item.contribuyente_nombre_tipo + '</option>');
+                    });
+                } else {
+                    $select.append('<option value="" disabled>No hay datos disponibles</option>');
+                }
+
+                resolve(dataRazonSocial);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                Swal.fire("Error", "Hubo un problema al obtener los contribuyentes", "error");
+                console.error(errorThrown);
+                reject(errorThrown);
+            }
+        });
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modalEditarSolicitud = document.getElementById('modal_editar_solicitud');
+
+    modalEditarSolicitud.addEventListener('shown.bs.modal', function () {
+        // Establecer siempre la pestaña 1 como seleccionada al abrir el modal
+        document.getElementById('edit_tab1').checked = true;
+    });
+})
+
+document.addEventListener('hidden.bs.modal', function (event) {
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+});

@@ -37,8 +37,8 @@ function getListTurnos() {
                     "data-turno_nombre='" + dataTurnos[i].turno_nombre + "'>" +
                     "<td>" + dataTurnos[i].turno_nombre + "</td>" +
                     "<td id='acciones'>" +
-                    "<i style='color: #FAA716' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
-                    "<i style='margin-left: 9px; color: red' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
+                    "<i style='color: #FAA716; cursor:pointer;' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
+                    "<i style='margin-left: 9px; color: red; cursor: pointer;' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
                     "</td>" +
                     "</tr>";
 
@@ -317,3 +317,9 @@ function eliminarTurno(turno_id) {
         }
     });
 }
+
+document.addEventListener('hidden.bs.modal', function (event) {
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+});

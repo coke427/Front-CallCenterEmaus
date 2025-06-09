@@ -102,8 +102,8 @@ function getListHoras(selectedTurnoId) {
                     "data-turno_id='" + dataHoras[i].turno_id + "' " + "'>" +
                     "<td>" + dataHoras[i].hora_nombre + "</td>" +
                     "<td id='acciones'>" +
-                    "<i style='color: #FAA716' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
-                    "<i style='margin-left: 9px; color: red' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
+                    "<i style='color: #FAA716; cursor: pointer;' class='bx bx-edit editar_button' id='editar_programacion'></i>" +
+                    "<i style='margin-left: 9px; color: red; cursor:pointer;' class='bx bx-trash eliminar_button' id='eliminar__programacion'></i>" +
                     "</td>" +
                     "</tr>";
 
@@ -132,7 +132,16 @@ function getListHoras(selectedTurnoId) {
                     },
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'pdf'
+                        {
+                            extend: 'excel',
+                            text: '<img src="/img/excel.png" alt="Excel" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        },
+                        {
+                            extend: 'pdf',
+                            text: '<img src="/img/pdf.png" alt="PDF" style="width: 35px;" />',
+                            className: 'btn-export-icon'
+                        }
                     ]
                 });
             }
@@ -380,3 +389,8 @@ function eliminarHora(hora_id) {
         }
     });
 }
+document.addEventListener('hidden.bs.modal', function (event) {
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+});
